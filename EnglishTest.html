@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <link href="assets/css/normalize.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/QuizTec.css">
+    <title>Document</title>
+</head>
+
+<body>
+    
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top" data-scrollto-offset="0">
+    <div class="container-fluid d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center scrollto me-auto me-lg-0">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <img src="assets/imgs/logo-no-background.png" alt="">
+      </a>
+
+     
+
+      <div class="nav-icons-group avatar-nav d-flex align-items-center gap-1" id="small-avatar">
+        <img src="assets/imgs/temporary-profile-placeholder-1.jpg" alt="small-rounded-user-avatar" width="20" height="20" id="avatar-small-nav" />
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle  profile__dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-sharp fa-solid fa-caret-down profile__dropdown" style="color: #000000;"></i>
+          </button>
+          <ul class="dropdown-menu">
+            <li><p style="margin-left: 15px; margin-bottom: 2px;">Sign in as:<br>obadaajouly</p></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Sign out</a></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+       
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li>Page Name</li>
+          </ol>
+        </div>
+
+      </div>
+    </div><!-- End Breadcrumbs -->
+
+    <!-- ======= Section ======= -->
+  
+
+  </main><!-- End #main -->
+  
+    <div class="container mt-5 cust_container" id="quiz-container">
+        <div class="d-flex justify-content-center row">
+            <div class="col-md-10 col-lg-10">
+                <div class="border">
+                 
+                    <div class="question bg-white p-3 border-bottom">
+                        <div class="d-flex flex-row justify-content-between align-items-center mcq hr">
+                            <h4 >English Test</h4><span class="Timer"  id="countdown"> Timer: </span></div>
+                    </div>
+                    <div class="question bg-white p-3 border-bottom">
+                        <div class="d-flex flex-row align-items-center question-title">
+                            <h3 class="text custtext-danger tt">Q.</h3>
+                            <h5 class="mt-1 ml-2" id="question"></h5>
+                          
+                        </div>
+
+                        <!-- <ul class="list-group list-group-flush">
+                          
+                            <inputtype="radio"  id="listItem" class="option list-group-item"><span id="option0" onclick="calcScore(this)"></span></li>
+                            <input type="radio"class="option list-group-item"><span id="option1" onclick="calcScore(this)"></span></li>
+                            <input type="radio" class="option list-group-item"><span id="option2" onclick="calcScore(this)"></span></li>
+                            <input type="radio" class="option list-group-item"><span id="option3" onclick="calcScore(this)"></span></li> 
+                          </ul> -->
+                              <ul class="list-group list-group-flush">
+                                <li class="list-group-item option">
+                                <input type="radio" id="option0" name="answer" >
+                                <label for="option0" id="optiona"onclick="calcScore(this)">A.</label>
+                              </li>
+                              <li class="list-group-item option">
+                                <input type="radio" id="option1" name="answer" >
+                                <label for="option1" id="optionb"onclick="calcScore(this)"></label>
+                              </li>
+                              <li class="list-group-item option">
+                                <input type="radio" id="option2" name="answer" >
+                                <label for="option2" id="optionc"onclick="calcScore(this)"></label>
+                              </li>
+                              <li class="list-group-item option">
+                                <input type="radio" id="option3" name="answer" >
+                                <label for="option3" id="optiond" onclick="calcScore(this)"></label>
+                              </li>
+                            </ul>
+                          <div class="d-flex flex-row-reverse flex-row justify-content-between align-items-center p-1 bg-white buttons ">
+                           
+                            <button class="btn btn-primary border-success align-items-center next" type="button">Next<i class="fa fa-angle-right ml-2">
+                            </i>
+                        </button>
+                       
+                        </div>
+                        <hr>
+                        <span class="Timer"id="stat"></span>
+                      
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- scoreboard section -->
+    <div id="scoreboard">
+       
+        <h2 id="score-title" style="padding: 1rem;">Your Score</h2>
+        <h2 id="score"></h2>
+        <div class="score_secreen">
+        <button type="button" id="score-btn" onclick="backToQuiz()">Back to Home</button>
+        <button type="button" id="check-answer" onclick="checkAnswer()">Check Answers</button>
+
+    </div>
+    </div>
+
+    <!-- answers section -->
+    <div id="answerBank" class="answerBank">
+        <h2>Review :</h2>
+        
+        <ol type="1" id="answers">
+            
+        </ol>
+        <button class="score-btn" type="button" id="score-btn" onclick="backToQuiz()">Back to Home</button>
+    </div>
+    <img  src="assets/imgs/think.gif"class="img_gif">
+
+   <script src="/assets/scripts/EnglishTest.js"></script>
+</body>
+</html>
