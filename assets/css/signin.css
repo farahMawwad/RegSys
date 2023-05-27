@@ -1,0 +1,21 @@
+a{
+    text-decoration: none;
+}
+
+.signin-aside{
+    background-color: #32B0C7;
+}
+
+.signin-aside-option{
+    background-color: #32B0C7;
+}
+
+.login-btn{
+    background-color: #32B0C7;
+    border: #32B0C7;
+}
+
+#signUp-btn:hover,#signIn-btn:hover{
+    background-color: #32B0C7;
+    opacity: 60%;
+}

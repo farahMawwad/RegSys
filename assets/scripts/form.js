@@ -40,6 +40,7 @@ if (save_Data_gender) {
 
 gender_select.addEventListener("change", () => {
   localStorage.setItem('gender', gender_select.value);
+
 });
     let nationality_Input=document.querySelector('.nationality_Input');
     let save_Data_nationality=localStorage.getItem('nationality');
@@ -54,3 +55,72 @@ gender_select.addEventListener("change", () => {
         localStorage.setItem("education",education_Input.value)
     })
 })
+<<<<<<< HEAD
+
+=======
+//------------------------------------------------------------------------------------------------------
+let array = JSON.parse(localStorage.getItem("users"));
+let currentUser = JSON.parse(localStorage.getItem("currentUser"));
+console.log("array-------")
+console.log(array)
+console.log("currentUser-------")
+console.log(currentUser)
+
+updateInfo()
+console.log("test")
+function updateInfo(){
+    // if (
+    //     fullName.value !== "" &&
+    //     address.value !== "" &&
+    //     phone.value !== "" &&
+    //     birthday.value !== "" &&
+    //     nationality.value !== "" &&
+    //     gender.value !== ""
+    //     education_level.value !== ""
+    //     major.value !== ""
+    //   ) {
+        //flag
+        console.log(array.info)
+        currentUser.progressbar +=33;
+        currentUser.info = true;
+        //to add value of current user(before was: null)
+        currentUser.userInfo= {
+            //object
+            fullName: "farah",//fullName input
+            address: "zarqa",
+            phone: "07777777",
+            birthday: "12-5-1999",
+            nationality: "jordanian",
+            gender: "female",
+            education_level: "pachalor",
+            major:"softeng",
+          }
+    // }
+    const updateArr = array.map((ele) => {
+        return ele.email === currentUser.email
+          ? {
+              ...ele, //just update on key of the elements
+              progressbar:currentUser.progressbar,
+              info: true,
+              userInfo: {
+                //object
+                fullName: "farah",//fullName input
+                address: "zarqa",
+                phone: "0785255159",
+                birthday: "12-5-2021",
+                nationality: "jordanian",
+                gender: "female",
+                education_level: "pachalor",
+                major:"softeng",
+              }
+            }
+          : ele;
+      });
+
+      localStorage.setItem("users", JSON.stringify(updateArr));
+  
+      localStorage.setItem("currentUser", JSON.stringify(currentUser));
+}
+
+//------------------------------------------------------------------------------------------------------
+>>>>>>> b3a359b16ecc269b252100d25c35c0b276f05a15
