@@ -1,13 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Courgette&display=swap");
 .form_Box {
-  background-color: #32b0c7;
-  margin: 1% 0 4% 0;
-  border-radius: 20px;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px;
-  box-shadow: #32b0c7 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  border: 10px solid #5eb0be;
+  border-radius: 10px;
+  margin: 5px 0 4% 0;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
 }
 .input_Details {
   display: flex;
@@ -18,38 +16,43 @@
 }
 .input_Form {
   width: 70%;
-
   margin-bottom: 50px;
 }
-.label_Text {
+/* .label_Text {
   margin-left: 30%;
-}
+} */
 .personal_Info {
-  margin: 70px 0 60px 30px;
-  color: #fff;
-  font-family: "Courgette", cursive;
+  margin: 50px 0 60px 30px;
+  color: #5eb0be;
+  font-family: Open Sans ", system-ui, -apple-system, " Segoe UI ", Roboto, "
+    Helvetica Neue ", Arial, " Noto Sans ", " Liberation Sans ", sans-serif, "
+    Apple Color Emoji ", " Segoe UI Emoji ", " Segoe UI Symbol ", " Noto Color
+    Emoji;
+  font-size: 250%;
 }
 #gender_select {
   width: 250px;
   height: 48%;
   border-radius: 5px;
-  border-color: #fff;
+  border-color: #e3e4e7;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
   color: rgb(100, 99, 99);
 }
+
 .btn_Submit {
-  background-color: #32b0c7;
-  color: #fff;
+  background-color: #5eb0be;
   font-weight: bold;
   border: solid 3px #fff;
   width: 20%;
   margin-left: 42%;
+  margin-bottom: 3%;
 }
-.btn_Submit:hover{
-font-size: large;
+.btn_Submit:hover {
+  background-color: rgb(95, 192, 212);
+  border-color: #fff;
 }
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
@@ -73,11 +76,10 @@ font-size: large;
     height: 150%;
     width: 50%;
   }
-}
-@media screen and (min-width: 769px) and (max-width: 1440px) {
-  /* .form_Box {
-  height:fit-content;  
- } */
+  .btn_Submit {
+    width: 30%;
+    margin-left: 35%;
+  }
 }
 #gender_select {
   height: 35px;
@@ -85,15 +87,3 @@ font-size: large;
   margin-left: 2px;
   margin-bottom: 50px;
 }
-/* @media screen and (min-width:769px){
-  .form_Box {
-    height: 5000px;
-  width: 50%;
-  }
-  #gender_select{
-    height:35px ;
-    width: 69%;
-    
-    margin-bottom: 50px;
-  }
-} */
