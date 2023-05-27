@@ -61,7 +61,7 @@ var questionBank = [
     //Q5
   
     {
-      question: "_____ to offend anyone, she said both cakes were equally good.
+      question: "_____ to offend anyone, she said both cakes were equally good."
       ,
       option: [
         "Not wanting",
@@ -158,15 +158,16 @@ var questionBank = [
     {
       question:
         "The CSS property used to control the spacing between individual letters is:",
-      option: ["letter-spacing", "word-spacing", "text-spacing", "line-spacing"],
-      answer: "letter-spacing",
+      option: ["is achieved", "is to be achieved", " will be achieved", "is due to achieve"],
+      answer: "is to be achieved",
     },
     //Q15
     {
       question:
-        "Which CSS property is used to add shadows to elements?",
-      option: ["text-shadow", "box-shadow", "shadow-effect", "element-shadow"],
-      answer: "box-shadow",
+        "______ gifts to the judges.",
+      option: [" It's not allowed offering", "It's not permitted to offer",
+       "It's not permitted offering", " It's not allowed to offer"],
+      answer: "It's not permitted to offer",
     },
     //Q16
     {
@@ -367,7 +368,7 @@ var questionBank = [
   function backToQuiz() {
     localStorage.removeItem("questionIndex");
     localStorage.removeItem("timer");
-    window.location.href = "inner-page.html";
+    window.location.href = "dashboard.html";
     //location.reload();
   }
   //function to check Answers
@@ -462,7 +463,8 @@ var questionBank = [
     } else {
       clearInterval(ticker);
       localStorage.removeItem("timer"); // Clear the timer from local storage when it reaches 0
-      window.location.href = "inner-page.html"; // Restart the timer with a duration of 10 minutes
+      window.location.href = "dashboard.html";
+      // Restart the timer with a duration of 10 minutes
     }
   
     var mins = Math.floor(secs / 60);

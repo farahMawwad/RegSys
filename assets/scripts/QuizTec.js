@@ -370,7 +370,8 @@ function backToQuiz() {
   localStorage.removeItem("questionIndex");
   localStorage.removeItem("timer");
   //location.reload();
-  window.location.href = "inner-page.html";}
+  window.location.href = "dashboard.html";
+}
 
 //function to check Answers
 function checkAnswer() {
@@ -464,7 +465,8 @@ function tick() {
   } else {
     clearInterval(ticker);
     localStorage.removeItem("timer"); // Clear the timer from local storage when it reaches 0
-    window.location.href = "inner-page.html"; // Restart the timer with a duration of 10 minutes
+    window.location.href = "dashboard.html";
+    // Restart the timer with a duration of 10 minutes
   }
 
   var mins = Math.floor(secs / 60);
