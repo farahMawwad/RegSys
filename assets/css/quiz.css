@@ -12,12 +12,11 @@
 }
 .options{
     margin-top:3% ;
-    display: grid;
-    grid-template-columns: auto auto auto ;
-    gap: 5%;
-    border-radius: 20px;
-    box-shadow: rgb(201, 203, 203) 0px 10px 20px 2px ;
-    padding: 6%;
+    margin-bottom:30% ;
+    border-radius:10px ;
+    box-shadow: #5eb0be  0px 5px 15px 2px ;
+    padding: 5%;
+    
 }
 
 .bar{
@@ -26,27 +25,29 @@
 .img_option{
 
   border-radius: 12px;
-    box-shadow:rgb(50, 176, 199) 0px 10px 20px 2px;
+    box-shadow:rgb(50, 176, 199) 0px 5px 15px 2px;
  
+}
+.range{
+    width: .5%;
+    background-color:rgb(46, 195, 222) ;
 }
 .img_option:hover{
     cursor: pointer;
     animation: move;
-    animation-duration: 2s;
+    animation-duration: .5s;
+
+    animation-fill-mode: forwards;
+    
+    
 }
 @keyframes move{
  
     to{
-        box-shadow: rgb(1, 14, 89) 0px 20px 30px 2px;
-        transform: rotate(10deg) scale(.9) ;
+        box-shadow: rgb(46, 195, 222) 0px 20px 30px 2px;
+        transform:  scale(1.05) ;
         
 }
 
 }
 
-@media   (max-width: 991px){
-    .options{
-        grid-template-columns: auto;
-
-    }
-}
