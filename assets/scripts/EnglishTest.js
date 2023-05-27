@@ -1,121 +1,122 @@
 var questionBank = [
     //Q1
     {
-      question: "Why We Use &lt;br&gt;Element",
+      question: "I'm very happy _____ in India. I really miss being there.",
       option: [
-        "To Make Text Bold",
-        "To Make Text Italic",
-        "To Add Breakline",
-        "To Create Horizontal Line",
+        "to have lived",
+        " to be lived",
+        "to be living",
+        " to have lived",
       ],
-      answer: "To Add Breakline",
+      answer: " to have lived",
     },
     //Q2
   
     {
-      question: "Is &lt;img&gt; Element Has Attribute href",
+      question: "They didn't reach an agreement ______ their differences",
       option: [
-        "Yes",
-        "No Its For Anchor Tag &lt;a&gt;",
-        "All Elements Has This Attribute",
-        "Answer 1 And 3 Is Right",
+        "on account of",
+        "due",
+        "because",
+        "owing",
       ],
-      answer: "No Its For Anchor Tag &lt;a&gt;",
+      answer: "on account of",
     },
     //Q3
   
     {
-      question: "How Can We Make Element Text Bold",
+      question: "I wish I _____ those words. But now it's too late.",
       option: [
-        "Putting It Inside &it;b&gt;Tag",
-        "Putting It Inside &lt;strong&gt; Tag",
-        "Customizing It With Font-Weight Property In CSS",
-        "All Answers Is Right",
+        "not having said",
+        "have never said",
+        "never said",
+        " had never said",
       ],
-      answer: "All Answers Is Right",
+      answer: "had never said",
     },
     //Q4
   
     {
-      question: "How Can We Include External Page Inside Our HTML Page",
+      question: "The woman, who has been missing for 10 days, is believed _____.",
       option: [
-        "By Using Include in HTML",
-        "By Using Load In HTML",
-        "By Using iFrame Tag",
-        "All Solutions Is Wrong",
+        "to be abducted",
+        "to be abducting",
+        "to have been abducted",
+        "to have been abducting",
       ],
-      answer: "By Using iFrame Tag",
+      answer: "to have been abducted",
     },
     //Q4
   
     {
-      question: "What Is The Tag That Not Exists in HTML",
+      question: "She was working on her computer with her baby next to _____.",
       option: [
-        "&lt; object &gt;",
-        "&lt; basefont &gt;",
-        "&lt; abbr &gt;",
-        "All Tags Is Exists in HTML",
+        "herself",
+        "her",
+        "her own",
+        "hers",
       ],
-      answer: "All Tags Is Exists in HTML",
+      answer: "her",
     },
     //Q5
   
     {
-      question: "How We Specify Document Type Of HTML5 Page",
+      question: "_____ to offend anyone, she said both cakes were equally good.
+      ,
       option: [
-        "&lt;!DOCTYPE html&gt;",
-        "&lt;!DOCTYPE html5 &gt;",
-        "&lt;!DOCTYPE html5&gt;",
-        "&lt;!DOCTYPE html&gt;",
+        "Not wanting",
+        "As not wanting",
+        "She didn't want",
+        "Because not wanting",
       ],
-      answer: "&lt;!DOCTYPE html&gt;",
+      answer: "Not wanting",
     },
     //Q6
   
     {
-      question: "What Is The Element Thats Not Exists in HTML5 Semantics",
+      question: "_____ in trying to solve this problem. It's clearly unsolvable.",
       option: [
-        "&lt;article&gt;",
-        "section&gt;",
-        "&lt;blockquote&gt;",
-        "&lt;aside &gt;",
+        "There's no point",
+        "It's no point",
+        "There isn't poin",
+        "It's no need",
       ],
-      answer: "&lt;blockquote &gt;",
+      answer: "There's no point",
     },
     //Q7
   
     {
-      question: "In HTML Can We Use This Way To Add Attributes",
+      question: "Last year, when I last met her, she told me she _____ a letter every day for the last two months.",
       option: [
-        "&lt;div class='class-name'&gt;",
-        "&lt;div class=class-name&gt;",
-        '&lt;div class="class-name"&gt;',
-        "All Is Right",
+        "had written",
+        "has written",
+        'had been writing',
+        "wrote",
       ],
-      answer: "All Is Right",
+      answer: "had been writing",
     },
     //Q8
     {
-      question: "What is CSS? ",
+      question: "He _____ robbed as he was walking out of the bank. ",
       option: [
-        "CSS is a style sheet language",
-        "CSS is designed to separate the presentation and content, including layout, colors, and fonts",
-        "All of the mentioned",
-        "CSS is the language used to style the HTML documents",
+        "had",
+        "did",
+        "got",
+        "were",
       ],
-      answer: "All of the mentioned",
+      answer: "got",
     },
     //Q9
   
     {
-      question: "Which of the following tag is used to embed css in html page? ",
+      question: "_____ forced to do anything. He acted of his own free will. ",
       option: [
-        "&lt;css&gt;",
-        "&lt;!DOCTYPE html&gt;",
-        "&lt;script&gt;",
-        " &lt;style&gt;",
+        "In no way was he",
+        "No way he was",
+        "In any way he was",
+        "In any way was he",
       ],
-      answer: "&lt;style&gt;",
+      answer: "In no way was he",
     },
     //Q10
   
@@ -301,7 +302,7 @@ var questionBank = [
     timeInSecs = parseInt(secs);
     ticker = setInterval(tick, 1000);
   }
-  
+
   //function to display questions
   function displayQuestion() {
     if (questionCount < 15) {
@@ -359,7 +360,8 @@ var questionBank = [
   function backToQuiz() {
     localStorage.removeItem("questionIndex");
     localStorage.removeItem("timer");
-    location.reload();
+    window.location.href = "inner-page.html";
+    //location.reload();
   }
   //function to check Answers
   function checkAnswer() {
@@ -374,6 +376,7 @@ var questionBank = [
       showSelectedAnswers();
     }
   }
+  
   function showSelectedAnswers() {
     var answerBank = document.getElementById("answerBank");
     var answers = document.getElementById("answers");
@@ -401,6 +404,45 @@ var questionBank = [
       }
     }
   }
+  let done=document.getElementById("score-btn")
+  let array = JSON.parse(localStorage.getItem("users"));
+  let currentUser = JSON.parse(localStorage.getItem("currentUser"));
+  console.log("array-------")
+  console.log(array)
+  console.log("currentUser-------")
+  console.log(currentUser)
+  
+
+ 
+  function updateInfo(){
+  
+         
+          currentUser.progressbar +=33;
+       
+          currentUser.englishFlag = true;
+       currentUser.englishScore= score;
+     console.log(score);
+          //to add value of current user(before was: null)
+          
+      // }
+      const updateArr = array.map((ele) => {
+          return ele.email === currentUser.email
+            ? {
+                ...ele, //just update on key of the elements
+                progressbar:currentUser.progressbar,
+             
+                englishScore:currentUser.englishScore,
+                englishFlag: true,
+                
+              }
+            : ele;
+        });
+  
+        localStorage.setItem("users", JSON.stringify(updateArr));
+    
+        localStorage.setItem("currentUser", JSON.stringify(currentUser));
+  }
+  done.addEventListener("click", updateInfo);
   function startTimer(secs) {
     timeInSecs = parseInt(secs);
     ticker = setInterval(tick, 1000);
@@ -427,4 +469,5 @@ var questionBank = [
   
   startTimer(timeInSecs); // 5 minutes in seconds
   
+
   displayQuestion();
