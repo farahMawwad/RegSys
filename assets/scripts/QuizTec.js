@@ -369,7 +369,7 @@ next.addEventListener("click", nextQuestion);
 function backToQuiz() {
   localStorage.removeItem("questionIndex");
   localStorage.removeItem("timer");
-  location.reload();
+  //location.reload();
   window.location.href = "inner-page.html";}
 
 //function to check Answers
@@ -412,6 +412,46 @@ function showSelectedAnswers() {
     }
   }
 }
+let done=document.getElementById("score-btn")
+  let array = JSON.parse(localStorage.getItem("users"));
+  let currentUser = JSON.parse(localStorage.getItem("currentUser"));
+  console.log("array-------")
+  console.log(array)
+  console.log("currentUser-------")
+  console.log(currentUser)
+  
+
+ 
+  function updateInfo(){
+  
+         
+          currentUser.progressbar +=33;
+       
+          currentUser.englishFlag = true;
+       currentUser.englishScore= score;
+     console.log(score);
+          //to add value of current user(before was: null)
+          
+      // }
+      const updateArr = array.map((ele) => {
+          return ele.email === currentUser.email
+            ? {
+                ...ele, //just update on key of the elements
+                progressbar:currentUser.progressbar,
+             
+                englishScore:currentUser.englishScore,
+                englishFlag: true,
+                
+              }
+            : ele;
+        });
+  
+        localStorage.setItem("users", JSON.stringify(updateArr));
+    
+        localStorage.setItem("currentUser", JSON.stringify(currentUser));
+  }
+  done.addEventListener("click", updateInfo);
+
 function startTimer(secs) {
   timeInSecs = parseInt(secs);
   ticker = setInterval(tick, 1000);
