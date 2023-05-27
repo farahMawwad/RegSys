@@ -28,8 +28,8 @@
     box-shadow:rgb(50, 176, 199) 0px 5px 15px 2px;
  
 }
-.range{
-    width: .5%;
+#range{
+
     background-color:rgb(46, 195, 222) ;
 }
 .img_option:hover{
