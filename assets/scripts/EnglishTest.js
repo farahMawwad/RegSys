@@ -425,7 +425,7 @@ var questionBank = [
   function updateInfo(){
   
          
-          currentUser.progressbar +=33;
+          // currentUser.progressbar +=33;
        
           currentUser.englishFlag = true;
        currentUser.englishScore= score;
