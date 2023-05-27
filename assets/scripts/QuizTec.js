@@ -426,10 +426,10 @@ let done=document.getElementById("score-btn")
   function updateInfo(){
   
          
-          currentUser.progressbar +=33;
+          // currentUser.progressbar +=33;
        
-          currentUser.englishFlag = true;
-       currentUser.englishScore= score;
+          currentUser.techFlag = true;
+       currentUser.techScore= score;
      console.log(score);
           //to add value of current user(before was: null)
           
@@ -440,8 +440,8 @@ let done=document.getElementById("score-btn")
                 ...ele, //just update on key of the elements
                 progressbar:currentUser.progressbar,
              
-                englishScore:currentUser.englishScore,
-                englishFlag: true,
+                techScore:currentUser.techScore,
+                techFlag: true,
                 
               }
             : ele;
