@@ -122,28 +122,35 @@ var questionBank = [
   
     {
       question:
-        "Which of the following CSS selectors are used to specify a group of elements? ",
-      option: ["tag", "id", "class", " both class and tag"],
-      answer: "class",
+        "It _____ the best idea to pay for those tickets by credit card. It was too risky.",
+      option: ["may not have been", "may not be",
+       "may not be",
+        "must not have been"],
+      answer: "may not have been",
     },
     //Q11
     {
       question:
-        "Which of the following tags is used to define an HTML table?",
-      option: ["&ltdiv&gt", "&lttable&gt", "&ltsection&gt", " &ltspan&gt"],
-      answer: "&lttable&gt",
+        "They _____ in the basement for three months.",
+      option: ["were made sleeping", "were made sleep",
+       "made to sleep", 
+       "were made to sleep"],
+      answer: "were made to sleep",
     },
     //Q12
     {
       question:
-        "The CSS property used to set the text color is:",
-      option: ["text-color", "color", "font-color", " text-style"],
-      answer: "color",
+        "We'll never know what might have happened _____ the email earlier.",
+      option: ["if he sent", "had he sent",
+      
+      "if he has sent", 
+      "did he sent"],
+      answer: "had he sent",
     },
     //Q13
     {
       question:
-        "Which HTML tag is used to link an external CSS file?",
+        "If success _____, we need to prepare ourselves for every possible scenario.",
       option: ["&ltstyle&gt", "&ltlink&gt", "&ltscript&gt", " &ltcss&gt"],
       answer: "&ltlink&gt",
     },
