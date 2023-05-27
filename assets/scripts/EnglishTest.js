@@ -338,6 +338,7 @@ var questionBank = [
   function calcScore(e) {
     if (e.innerHTML === questionBank[i].answer && score < questionBank.length) {
       score = score + 1;
+      
     }
     //setTimeout(nextQuestion);
   
