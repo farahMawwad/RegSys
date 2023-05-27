@@ -55,3 +55,4 @@ gender_select.addEventListener("change", () => {
         localStorage.setItem("education",education_Input.value)
     })
 })
+
