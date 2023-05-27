@@ -40,6 +40,7 @@ if (save_Data_gender) {
 
 gender_select.addEventListener("change", () => {
   localStorage.setItem('gender', gender_select.value);
+
 });
     let nationality_Input=document.querySelector('.nationality_Input');
     let save_Data_nationality=localStorage.getItem('nationality');
