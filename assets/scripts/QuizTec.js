@@ -11,7 +11,6 @@ var questionBank = [
     answer: "To Add Breakline",
   },
   //Q2
-
   {
     question: "Is &lt;img&gt; Element Has Attribute href",
     option: [
@@ -23,7 +22,6 @@ var questionBank = [
     answer: "No Its For Anchor Tag &lt;a&gt;",
   },
   //Q3
-
   {
     question: "How Can We Make Element Text Bold",
     option: [
@@ -35,7 +33,6 @@ var questionBank = [
     answer: "All Answers Is Right",
   },
   //Q4
-
   {
     question: "How Can We Include External Page Inside Our HTML Page",
     option: [
@@ -47,7 +44,6 @@ var questionBank = [
     answer: "By Using iFrame Tag",
   },
   //Q4
-
   {
     question: "What Is The Tag That Not Exists in HTML",
     option: [
@@ -283,10 +279,19 @@ var span = document.querySelectorAll("label");
 var i = 0;
 var selectedAnswers = [];
 var score = 0;
-
+var savedQuestionIndex = localStorage.getItem("questionIndex");
+var questionIndex = savedQuestionIndex ? parseInt(savedQuestionIndex) : 0;
 var savedTime = localStorage.getItem("timer");
 var timeInSecs = savedTime ? parseInt(savedTime) : 10 * 60; // Default to 10 minutes if no saved time exists
 var ticker;
+
+// Check if a saved question index exists in local storage
+var savedQuestionIndex = localStorage.getItem('questionIndex');
+
+if (savedQuestionIndex) {
+  // Parse the saved index and assign it to the current index variable
+  i = parseInt(savedQuestionIndex);
+}
 function shuffle(array) {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -337,8 +342,12 @@ function calcScore(e) {
 
 //function to display next question
 function nextQuestion() {
+  questionIndex++;
+
   if (i < questionBank.length - 1) {
     i = i + 1;
+
+
     displayQuestion();
     
   } else
@@ -347,10 +356,11 @@ function nextQuestion() {
     quizContainer.style.display = "none";
     scorecard.style.display = "block";
   
- 
-  
+   } 
+   localStorage.setItem('questionIndex', i.toString());
+
   localStorage.setItem("timer", i.toString());
-}}
+}
 
 //click events to next button
 next.addEventListener("click", nextQuestion);
@@ -359,8 +369,9 @@ next.addEventListener("click", nextQuestion);
 function backToQuiz() {
   localStorage.removeItem("questionIndex");
   localStorage.removeItem("timer");
-  location.reload();
-}
+  //location.reload();
+  window.location.href = "inner-page.html";}
+
 //function to check Answers
 function checkAnswer() {
   var answerBank = document.getElementById("answerBank");
@@ -401,6 +412,46 @@ function showSelectedAnswers() {
     }
   }
 }
+let done=document.getElementById("score-btn")
+  let array = JSON.parse(localStorage.getItem("users"));
+  let currentUser = JSON.parse(localStorage.getItem("currentUser"));
+  console.log("array-------")
+  console.log(array)
+  console.log("currentUser-------")
+  console.log(currentUser)
+  
+
+ 
+  function updateInfo(){
+  
+         
+          currentUser.progressbar +=33;
+       
+          currentUser.englishFlag = true;
+       currentUser.englishScore= score;
+     console.log(score);
+          //to add value of current user(before was: null)
+          
+      // }
+      const updateArr = array.map((ele) => {
+          return ele.email === currentUser.email
+            ? {
+                ...ele, //just update on key of the elements
+                progressbar:currentUser.progressbar,
+             
+                englishScore:currentUser.englishScore,
+                englishFlag: true,
+                
+              }
+            : ele;
+        });
+  
+        localStorage.setItem("users", JSON.stringify(updateArr));
+    
+        localStorage.setItem("currentUser", JSON.stringify(currentUser));
+  }
+  done.addEventListener("click", updateInfo);
+
 function startTimer(secs) {
   timeInSecs = parseInt(secs);
   ticker = setInterval(tick, 1000);
