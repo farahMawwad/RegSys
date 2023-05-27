@@ -2,6 +2,7 @@ usersArray = JSON.parse(localStorage.getItem("users"))
     ? JSON.parse(localStorage.getItem("currentUser"))
     : [];
 let array = JSON.parse(localStorage.getItem("currentUser"));
+
 console.log(usersArray)
 console.log(array.progressbar)
 
