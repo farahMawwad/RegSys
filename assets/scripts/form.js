@@ -83,7 +83,7 @@ function updateInfo(){
 
       {
         //flag
-        currentUser.progressbar =33;
+        currentUser.progressbar +=33;
         currentUser.info = true;
         //to add value of current user(before was: null)
         currentUser.userInfo= {
@@ -126,4 +126,3 @@ function updateInfo(){
 
 }
 //------------------------------------------------------------------------------------------------------
-
