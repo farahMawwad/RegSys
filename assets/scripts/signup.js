@@ -63,19 +63,20 @@ function saveData() {
       password: passwordInput,
       progressbar:0,
       //flags
-      df: false,
+      info: false,
       techFlag: false,
       englishFlag: false,
       //user info From Form page
       userInfo: {
         //object
-        first_Name: null,
-        last_Name: null,
+        fullName: null,
+        address: null,
         phone: null,
         birthday: null,
-        gender: null,
         nationality: null,
+        gender: null,
         education_level: null,
+        major:null,
       },
       // to save user score
       englishScore: null,
