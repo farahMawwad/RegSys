@@ -129,15 +129,16 @@ span {
 }
 button {
   display: flex;
-  justify-content: end;
+  justify-content: center;
   align-content: center;
   padding: 1rem 1.5rem;
   border: none;
-
+width: 25%;
+text-align: center;
   font-size: 1.5rem;
   border-radius: 1.5rem;
   color: rgba(16, 15, 16, 0.98);
-  background: rgba(68, 68, 67, 0.82);
+  background-color: #485663;
 }
 button:active {
   background: lavender;
@@ -163,16 +164,18 @@ button:hover {
   margin: 1rem 0;
 }
 .score-btn{
-  margin-top: 1rem;
+  
   margin-left: 40%;
   margin-right: 40%;
-  background-color: #485663;
+  background-color: #2b3c4c;
   color: #fff;
+  
 }
+#score-btn
 #check-answer {
   margin-top: 1rem;
 
-  background-color: #485663;
+  background-color: #374e65;
   color: #fff;
   
 }

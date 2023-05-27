@@ -293,8 +293,8 @@ var questionBank = [
   var selectedAnswers = [];
   var score = 0;
   
-  var savedTime = localStorage.getItem("timer");
-  var timeInSecs = savedTime ? parseInt(savedTime) : 20 * 60; // Default to 10 minutes if no saved time exists
+  var savedTime = localStorage.getItem("timer1");
+  var timeInSecs1 = savedTime ? parseInt(savedTime) : 20 * 60; // Default to 10 minutes if no saved time exists
   var ticker;
   function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -331,13 +331,14 @@ var questionBank = [
       quizContainer.style.display = "none";
       scorecard.style.display = "block";
     }
-    localStorage.setItem("timer", i.toString());
+    localStorage.setItem("timer1", i.toString());
   }
   
   //function to calculate scores
   function calcScore(e) {
     if (e.innerHTML === questionBank[i].answer && score < questionBank.length) {
       score = score + 1;
+      
     }
     //setTimeout(nextQuestion);
   
@@ -358,7 +359,7 @@ var questionBank = [
     
    
     
-    localStorage.setItem("timer", i.toString());
+    localStorage.setItem("timer1", i.toString());
   }}
   
   //click events to next button
@@ -367,7 +368,7 @@ var questionBank = [
   //Back to Quiz button event
   function backToQuiz() {
     localStorage.removeItem("questionIndex");
-    localStorage.removeItem("timer");
+    localStorage.removeItem("timer1");
     window.location.href = "dashboard.html";
     //location.reload();
   }
@@ -425,7 +426,7 @@ var questionBank = [
   function updateInfo(){
   
          
-          currentUser.progressbar +=33;
+          // currentUser.progressbar +=33;
        
           currentUser.englishFlag = true;
        currentUser.englishScore= score;
@@ -452,17 +453,17 @@ var questionBank = [
   }
   done.addEventListener("click", updateInfo);
   function startTimer(secs) {
-    timeInSecs = parseInt(secs);
+    timeInSecs1 = parseInt(secs);
     ticker = setInterval(tick, 1000);
   }
   function tick() {
-    var secs = timeInSecs;
+    var secs = timeInSecs1;
     if (secs > 0) {
-      timeInSecs--;
-      localStorage.setItem("timer", timeInSecs.toString()); // Save the updated time in local storage
+      timeInSecs1--;
+      localStorage.setItem("timer1", timeInSecs1.toString()); // Save the updated time in local storage
     } else {
       clearInterval(ticker);
-      localStorage.removeItem("timer"); // Clear the timer from local storage when it reaches 0
+      localStorage.removeItem("timer1"); // Clear the timer from local storage when it reaches 0
       window.location.href = "dashboard.html";
       // Restart the timer with a duration of 10 minutes
     }
@@ -476,7 +477,7 @@ var questionBank = [
     document.getElementById("countdown").innerHTML = "Timer: " + result;
   }
   
-  startTimer(timeInSecs); // 5 minutes in seconds
+  startTimer(timeInSecs1); // 5 minutes in seconds
   
 
   displayQuestion();

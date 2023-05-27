@@ -16,20 +16,44 @@ done_button.disabled = true;
 let info = document.getElementById('info')
 let tech = document.getElementById('tech')
 let eng = document.getElementById('eng')
-if (array.progressbar==33)
-{
-    range.style.width='33%'
-info.href=""
+// if (array.progressbar==33)
+// {
+//     range.style.width='33%'
+// info.href=""
 
-}
-else if(array.progressbar==66){
-    range.style.width='66%'
-eng.href=""
-}
-else if(array.progressbar>66){
-    range.style.width='100%'
-    tech.href=""
-    done_button.disabled=false;
+// }
+// else if(array.progressbar==66){
+//     range.style.width='66%'
+// eng.href=""
+// }
+// else if(array.progressbar>66){
+//     range.style.width='100%'
+//     tech.href=""
+//     done_button.disabled=false;
+
+// }
+progressbar()
+
+function progressbar(){
+    let updatedProgressbar = 0
+    array.progressbar = 0
+    if (array.info){
+        updatedProgressbar +=33
+        info.href="dashboard.html"
+    }
+    if (array.englishFlag){
+        updatedProgressbar +=33
+        eng.href="dashboard.html"
+    }
+    if (array.techFlag){
+        updatedProgressbar +=34
+        tech.href="dashboard.html"
+    }
+
+    if (array.info & array.englishFlag & array.techFlag){
+        done_button.disabled=false;
+    }
+    range.style.width=`${updatedProgressbar}%`
 
 }
 
