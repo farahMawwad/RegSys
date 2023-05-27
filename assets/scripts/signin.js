@@ -20,7 +20,7 @@ signIn_btn.addEventListener("click", (e) => {
     if (existsUser) {
       //local storage of current user , currentUser is the key of: existUser
       localStorage.setItem("currentUser", JSON.stringify(existsUser));
-      window.location = "../../index.html";
+      window.location = "dashboard.html";
     }
     //if user not exist or email does not match password
     else {

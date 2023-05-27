@@ -61,6 +61,7 @@ function saveData() {
       secondName: secondName,
       email: email,
       password: passwordInput,
+      progressbar:0,
       //flags
       df: false,
       techFlag: false,
